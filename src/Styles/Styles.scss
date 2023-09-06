@@ -1,0 +1,56 @@
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+
+    .btn-secondary {
+        margin: 3px;
+        padding: 2px;
+        align-items: center;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.dark {
+    background-color: #111010;
+    color: #FFF
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.carouselHome {
+    align-items: center;
+}
+
+.carousel-caption {
+    position: relative;
+    color: #474646;
+    right: 0;
+    left: 0;
+}
+
+
+
+.carousel-indicators [data-bs-target] {
+    background-color: #111010;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+
+    background-color: #111010;
+}
+
+.is-ff-sans-bold {
+    text-transform: uppercase;
+}
+
+.cardHome {
+    width: 18rem;
+}

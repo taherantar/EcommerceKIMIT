@@ -1,0 +1,9 @@
+.btn-group {
+  flex-wrap: wrap;
+}
+.btn-group .btn-secondary {
+  margin: 3px;
+  padding: 2px;
+  width: 50px;
+  align-items: center;
+}

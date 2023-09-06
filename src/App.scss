@@ -1,0 +1,23 @@
+@import "./sass/components/homePage";
+
+* {
+    box-sizing: border-box;
+}
+
+.dark {
+    background-color: #4e4e4e;
+    color: #FFF
+}
+
+.rtl{
+    direction: rtl;
+}
+
+.btn-group, .btn-group-vertical{
+    display: inline-flex;
+    vertical-align: middle;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
