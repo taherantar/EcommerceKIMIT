@@ -26,9 +26,6 @@ export default function Home() {
             <h1 className="is-ff-sans-bold">what's happening</h1>
             <p>This summer, Samaritaine introduces its new "Sneakers Lounge", dedicated entirely to sneakers and city shoes.
             </p>
-            <Container>
-    
-                </Container>
             <Card />
             <Footer />
         </div>

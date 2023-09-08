@@ -25,7 +25,7 @@ export default function Products() {
     let getProducts = () => {
         fetch(baseUrl).then((res) => res.json()).then((data) => setProducts(data))
     };
-    console.log()
+    console.log(products)
     
     function getCategories() {
         fetch(`${baseUrl}/categories`).then(json => json.json()).then(res => setCategories(res))
