@@ -10,7 +10,7 @@ export default function ViewProducts({ products }) {
                 products.map((product) =>
                     <Col key={product.id} sm={12} md={6} lg={4} className="card-group">
                         <Card className="m-2">
-                            <Card.Img variant="top" src={product.image} />
+                            <Card.Img variant="top" src={product.thumbnail} />
                             <Card.Body>
                                 <Card.Title>{product.title}</Card.Title>
                                 <Card.Text>{product.price} $</Card.Text>

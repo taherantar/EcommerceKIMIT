@@ -16,25 +16,23 @@ export default function Products() {
     const { t } = useTranslation();
     const theme = useContext(ThemeContext)
 
-    const baseUrl = "http://localhost:2222/products";
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("All")
 
     let getProducts = () => {
-        fetch(baseUrl).then((res) => res.json()).then((data) => setProducts(data))
+        fetch("http://localhost:2222/products").then((res) => res.json()).then((data) => setProducts(data))
     };
-    console.log(products)
-    
+
     function getCategories() {
-        fetch(`${baseUrl}/categories`).then(json => json.json()).then(res => setCategories(res))
+        fetch(`http://localhost:2222/category`).then(json => json.json()).then(res => setCategories(res))
     };
-    
-    let filterProducts = (category) => {
-        fetch(`${baseUrl}/category/${category}`).then(json => json.json()).then(res => setProducts(res))
-        setSelectedCategory(category)
-    };
+
+    // let filterProducts = (category) => {
+    //     fetch(`${baseUrl}/category/${category}`).then(json => json.json()).then(res => setProducts(res))
+    //     setSelectedCategory(category)
+    // };
 
 
     useEffect(() => {
@@ -76,7 +74,8 @@ export default function Products() {
                                                         categories={categories}
                                                         selectedCategory={selectedCategory}
                                                         getProducts={getProducts}
-                                                        filterProducts={filterProducts} />
+                                                        // filterProducts={filterProducts}
+                                                    />
                                                 </Col>
                                             </row>
                                         </Offcanvas.Body>

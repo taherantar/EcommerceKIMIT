@@ -7,7 +7,6 @@ import {
     MDBCardImage
 } from 'mdb-react-ui-kit';
 import { Container } from 'react-bootstrap';
-import HoverCard from './HoverCard';
 
 export default function Card() {
     return (
@@ -40,7 +39,6 @@ export default function Card() {
                     <MDBCardImage position='bottom' src='https://mdbootstrap.com/img/new/slides/042.webp' alt='...' />
                 </MDBCard>
             </Container>
-                <HoverCard />
         </>
     );
 }

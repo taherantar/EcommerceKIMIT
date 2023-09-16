@@ -22,6 +22,7 @@ import EditProduct from './views/EditProducts';
 import store from "./redux/store";
 import { Provider } from 'react-redux';
 import ReduxExplain from './views/ReduxExplain';
+
 i18n
   .use(initReactI18next)
   .init({
@@ -35,7 +36,7 @@ i18n
 
       }
     },
-    lng: "en",
+    lng: localStorage.getItem("language") ? localStorage.getItem("language") : "en",
     fallbackLng: "en",
 
     interpolation: {

@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 export default function FilterMenu({ categories, selectedCategory, getProducts, children }) {
     const filterProducts = (category) => {
-        // Do something
     }
     return (
         <ButtonGroup aria-label="Basic example">

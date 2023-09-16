@@ -33,7 +33,7 @@ export default function ReduxExplain() {
     return (
         <div className={`text-center mainContent${i18n.language === "ar" && "rtl"} ${theme.theme === "dark" && "dark"}`}>
             <SiteNav />
-            <h1>ReduxExplain</h1>
+            <h1>{t('redux')}</h1>
             {/* <div>{counter}</div> */}
             <div>{countState}</div>
             <div className="d-flex justify-content-between">

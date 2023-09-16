@@ -5,9 +5,8 @@ import { useContext } from "react";
 import { ThemeContext } from "../contaxt/ThemeContext";
 import Slider from "../components/Slider";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import Footer from "../components/Footer";
 import Card from "../components/Card";
-import { Container, Row, Image, Col } from "react-bootstrap";
+import Footer from "../layout/Footer";
 
 export default function Home() {
     const { t } = useTranslation();
@@ -17,7 +16,7 @@ export default function Home() {
     return (
         <div className={`mainContent text-center ${i18n.language === "ar" && "rtl"} ${theme.theme === "dark" && "dark"}`}>
             <SiteNav />
-            {/* <h2 className="text-center m-4">{t('home')}</h2> */}
+            <h2 className="text-center m-4">{t('home')}</h2>
             <div>
                 {countState}
                 <Slider />

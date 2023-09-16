@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-import { useTranslation } from "react-i18next";
 import i18n from "i18next";
 import SiteNav from "../layout/SiteNav";
 import Image from 'react-bootstrap/Image';
@@ -8,7 +7,6 @@ import { useContext } from "react";
 import { ThemeContext } from "../contaxt/ThemeContext";
 
 export default function ProductDetails() {
-    const { t } = useTranslation();
     const theme = useContext(ThemeContext);
     const params = useParams();
 
@@ -23,13 +21,13 @@ export default function ProductDetails() {
     useEffect(() => {
         getSingleProduct()
 
-    }, [])
+    }, [ ])
 
     return (
         <div className={`mainContent text-center ${i18n.language === "ar" && "rtl"} ${theme.theme === "dark" && "dark"}`}>
             <SiteNav />
             <div className="d-flex m-4">
-                <Image src={product.image} thumbnail  className="w-25%" />
+                <Image src={product.thumbnail} thumbnail  className="w-25%" />
                 <div className="m-4 ba-b--lighter-gray">
                     <h2>{product.title}</h2>
                     <h3>{product.category}</h3>

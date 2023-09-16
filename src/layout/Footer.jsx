@@ -1,35 +1,25 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import { faFacebook, faTwitter, faInstagram, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function Footer() {
+
+
+
+
+export default function App() {
     return (
         <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
             <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-                <div className='me-5 d-none d-lg-block'>
+                <div className='mainSocial'>
+                    <span>Get connected with us on social networks:</span>
+                    <FontAwesomeIcon icon={faFacebook} />
+                    <FontAwesomeIcon icon={faTwitter} />
+                    <FontAwesomeIcon icon={faInstagram} />
+                    <FontAwesomeIcon icon={faPinterest} />
                 </div>
 
-                <div>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="facebook-f" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="twitter" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="google" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="instagram" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="linkedin" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="github" />
-                    </a>
-                </div>
             </section>
-
             <section className=''>
                 <MDBContainer className='text-center text-md-start mt-5'>
                     <MDBRow className='mt-3'>
@@ -43,7 +33,6 @@ export default function Footer() {
                                 consectetur adipisicing elit.
                             </p>
                         </MDBCol>
-
                         <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
                             <p>
@@ -67,7 +56,6 @@ export default function Footer() {
                                 </a>
                             </p>
                         </MDBCol>
-
                         <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
                             <p>
