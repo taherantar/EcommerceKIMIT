@@ -9,6 +9,7 @@ import i18n from "i18next";
 import "../Styles/Styles.scss";
 import { ThemeContext } from "../contaxt/ThemeContext";
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { getProducts as loadProducts, getCategories } from "../data";
 
 
 
@@ -22,22 +23,21 @@ export default function Products() {
     const [selectedCategory, setSelectedCategory] = useState("All")
 
     let getProducts = () => {
-        fetch("http://localhost:2222/products").then((res) => res.json()).then((data) => setProducts(data))
+        setProducts(loadProducts());
+        setSelectedCategory("All");
     };
 
-    function getCategories() {
-        fetch(`http://localhost:2222/category`).then(json => json.json()).then(res => setCategories(res))
+    const filterProducts = (category) => {
+        setSelectedCategory(category);
     };
 
-    // let filterProducts = (category) => {
-    //     fetch(`${baseUrl}/category/${category}`).then(json => json.json()).then(res => setProducts(res))
-    //     setSelectedCategory(category)
-    // };
-
+    const visibleProducts = selectedCategory === "All"
+        ? products
+        : products.filter((p) => p.category === selectedCategory);
 
     useEffect(() => {
-        getCategories();
-        getProducts();
+        setCategories(getCategories());
+        setProducts(loadProducts());
 
     }, []);
 
@@ -50,7 +50,7 @@ export default function Products() {
             <SiteNav />
             <div className="m-4">
                 <h2>{t('products')}</h2>
-                <h3>{t(`number_of_products`)} : {products.length}</h3>
+                <h3>{t(`number_of_products`)} : {visibleProducts.length}</h3>
                 <div class="row">
                     <div class="col">{getProducts.categories}</div>
                 </div>
@@ -74,13 +74,13 @@ export default function Products() {
                                                         categories={categories}
                                                         selectedCategory={selectedCategory}
                                                         getProducts={getProducts}
-                                                        // filterProducts={filterProducts}
+                                                        filterProducts={filterProducts}
                                                     />
                                                 </Col>
                                             </row>
                                         </Offcanvas.Body>
                                     </Offcanvas>
-                                    <ViewProducts products={products} />
+                                    <ViewProducts products={visibleProducts} />
                                 </>
                                 :
                                 <Spinner animation="border" role="status" className="m-4">
