@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { Container, Form } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { useNavigate } from "react-router-dom";
+import { getProduct, saveProductEdit } from "../data";
 export default function EditProduct() {
 
 
@@ -25,61 +26,16 @@ export default function EditProduct() {
                 setDescription(ev.target.value);
     };
 
-    async function postData(url = `http://localhost:2222/products/${params.productId}`) {
-        const response = await fetch(url, {
-            method: "PUT",
-            mode: "cors",
-            cache: "no-cache",
-            credentials: "same-origin",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            redirect: "follow",
-            referrerPolicy: "no-referrer",
-            body: JSON.stringify({
-                ...product,
-                title,
-                price,
-                description
-            })
-        });
-        return response.json();
-    }
-    async function postDataInCategory(url = `http://localhost:2222/products/${(product.category).split(" ").join("_")}/${params.productId}`) {
-        const response = await fetch(url, {
-            method: "PUT",
-            mode: "cors",
-            cache: "no-cache",
-            credentials: "same-origin",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            redirect: "follow",
-            referrerPolicy: "no-referrer",
-            body: JSON.stringify({
-                ...product,
-                title,
-                price,
-                description
-            })
-        });
-        return response.json();
-    }
-
     useEffect(() => {
-        fetch(`http://localhost:2222/products/${params.productId}`)
-            .then(res => res.json())
-            .then(product => {
-                setProduct(product)
-                setTitle(product.title)
-                setPrice(product.price)
-                setDescription(product.description)
-            })
+        const p = getProduct(params.productId)
+        setProduct(p)
+        setTitle(p.title || "")
+        setPrice(p.price || "")
+        setDescription(p.description || "")
     }, [params.productId])
 
     let handleEditProduct = (ev) => {
-        postData();
-        postDataInCategory();
+        saveProductEdit(params.productId, { title, price: Number(price), description });
         ev.preventDefault();
         navigate("/products");
     }
