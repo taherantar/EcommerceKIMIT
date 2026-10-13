@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# KIMIT E-Commerce 🛒
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bilingual (English / العربية) online store front-end built with **React**, **Redux** and **React Router**. Browse products, filter by category, view details, manage a cart, and switch between light/dark mode and RTL/LTR layouts.
 
-## Available Scripts
+> متجر إلكتروني ثنائي اللغة (عربي / إنجليزي) مبني بـ React و Redux، يدعم الوضع الليلي واتجاه الكتابة من اليمين لليسار.
 
-In the project directory, you can run:
+![Home page](docs/home.png)
+<!-- Add screenshots to /docs: home.png, products.png, cart.png -->
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Product listing with **category filter**
+- Product details page (images, price, discount, rating, stock)
+- **Shopping cart** with Redux state management
+- Edit products (admin-style form)
+- **Arabic / English** switch with full **RTL** support (i18next)
+- **Light / Dark** theme (React Context)
+- Responsive UI (Bootstrap, React-Bootstrap, MDB, SCSS)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧰 Tech Stack
 
-### `npm test`
+React 18 · Redux · React Router 6 · i18next · Bootstrap 5 · SCSS · Axios · json-server (mock API)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Run Locally
 
-### `npm run build`
+```bash
+git clone https://github.com/taherantar/EcommerceKIMIT.git
+cd EcommerceKIMIT
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Terminal 1 – mock API on port 2222
+npx json-server --watch src/database/db.json --port 2222
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Terminal 2 – the app
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open http://localhost:3000
 
-### `npm run eject`
+## 📁 Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+src/
+├── components/   # Card, Slider, FilterMenu, ViewProducts
+├── views/        # Home, Products, ProductDetails, Cart, EditProducts
+├── layout/       # SiteNav, Footer
+├── redux/        # store, reducers
+├── Locale/       # en.json, ar.json
+└── database/     # db.json (mock data)
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🗺️ Roadmap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [ ] Deploy live demo (Vercel / Netlify)
+- [ ] Replace json-server with a hosted API
+- [ ] Checkout flow and order history
+- [ ] Unit tests
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 👤 Author
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Taher Antar** — [GitHub](https://github.com/taherantar)
