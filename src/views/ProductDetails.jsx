@@ -5,6 +5,7 @@ import SiteNav from "../layout/SiteNav";
 import Image from 'react-bootstrap/Image';
 import { useContext } from "react";
 import { ThemeContext } from "../contaxt/ThemeContext";
+import { getProduct } from "../data";
 
 export default function ProductDetails() {
     const theme = useContext(ThemeContext);
@@ -13,9 +14,7 @@ export default function ProductDetails() {
     let [product, setProduct] = useState({});
 
     function getSingleProduct() {
-        fetch("http://localhost:2222/products/" + params.productId)
-            .then(json => json.json())
-            .then(res => setProduct(res))
+        setProduct(getProduct(params.productId))
     }
 
     useEffect(() => {
