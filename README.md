@@ -4,7 +4,7 @@ Bilingual (English / العربية) online store front-end built with **React**
 
 > متجر إلكتروني ثنائي اللغة (عربي / إنجليزي) مبني بـ React و Redux، يدعم الوضع الليلي واتجاه الكتابة من اليمين لليسار.
 
-![Home page](docs/home.png)
+![Home page](home.png)
 <!-- Add screenshots to /docs: home.png, products.png, cart.png -->
 
 ## ✨ Features
